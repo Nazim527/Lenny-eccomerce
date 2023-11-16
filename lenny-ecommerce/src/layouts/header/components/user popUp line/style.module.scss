@@ -1,0 +1,17 @@
+@import '../../../../helpers/map';
+@import '../../../../helpers/mixin';
+.userSubContent {
+    @include flex(space-between,center);
+
+    .left{
+        @include flex_row(10px);
+        align-items: center;
+        p {
+            @include size_color(secondary, PR2-16,FW_R)
+        }
+    }
+
+    .right p {
+        @include size_color(black, PR2-16,FW_M)
+    }
+}

@@ -1,0 +1,99 @@
+@import '../../helpers/map';
+@import '../../helpers/mixin';
+
+.shopping_cart_product {
+    padding: 24px 0;
+    border-bottom: 1px solid map-get($colors, secondary );
+
+    @include flex_colum(16px);
+    .chart_product_left {
+
+        @include flex_row(12px);
+        align-items: center;
+        .selected_product_choose form input {
+            width: 18px;
+            height: 18px;
+        }
+    }
+
+    .chart_product_right {
+
+        @include flex(space-between, center);
+        p {
+            @include size_color(secondary, PR5-10, FW_R)
+        }
+    }
+}
+
+.shopping_cart_product .chart_product_right .right_btns {
+    height: 35px;
+    @include flex_row(8px);
+
+    .total_product {
+        width: 74px;
+        height: 100%;
+        padding: 4px;
+        @include flex(space-between,center);
+
+        p{
+            @include size_color(black,PR4-12,FW_H);
+        }
+    }
+
+    .icon {
+        padding: 7px;
+        @include flex(center,center)
+    }
+}
+
+//! Query dor ipad
+@media screen and (min-width:1024px) {
+    .shopping_cart_product {
+
+        @include flex(space-between,center);
+        flex-direction: row;
+
+        .chart_product_right p:first-child{
+            display: none;
+        }
+    }
+}
+
+//!Query for desktop
+@media screen and (min-width: 1500px) {
+    .shopping_cart_product {
+        .chart_product_left .selected_product_choose form input{
+            width: 24px;
+            height: 24px;
+        }
+    
+        .chart_product_right {
+    
+            @include flex(space-between, center);
+            p {
+                @include size_color(secondary, PR5-10, FW_R)
+            }
+        }
+    }
+
+    .shopping_cart_product .chart_product_right .right_btns {
+        height: 44px;
+        @include flex_row(16px);
+    
+        .total_product {
+            width: 104px;
+            padding: 8px; 
+            p{
+                @include size_color(black,PR2-16,FW_H);
+            }
+        }
+    
+        .icon {
+            width: 44px;
+            padding: 7px;
+            svg {
+                font-size: 24px;
+            }
+        }
+    }
+}

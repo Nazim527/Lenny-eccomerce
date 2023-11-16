@@ -1,0 +1,118 @@
+@import '../../../../../helpers/map';
+@import '../../../../../helpers/mixin';
+
+.product_info_content {
+
+    @include flex_colum(24px);
+    .info_header {
+        @include flex_colum(20px);
+
+        .product_description {
+            @include size_color(secondary, PR3-14,FW_R);
+        }
+
+        
+    }
+
+    .line {
+        width: 100%;
+        height: 2px;
+        background-color: map-get($colors, dGrey)
+    }
+
+    .info_footer {
+        @include flex_colum(32px);
+
+        .product_variant {
+            width: 100%;
+
+            @include flex_colum(12px);
+            h4 {
+                @include size_color(black,EH_defualt,FW_H)
+            }
+
+            .choose_variant {
+                @include flex_row(17px)
+            }
+        }
+
+        .product_btns {
+            @include flex_colum(16px);
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
+
+//? Product Name sell info
+.info_header .product_sell_info {
+    @include flex_colum(24px);
+
+    .product_title {
+        h2 {
+            @include size_color(black, EH5-24,FW_H);
+            margin-bottom: 4px;
+        }
+
+        .product_rating_info {
+            @include flex($align: center);
+            @include flex_row(8px);
+            
+            .diff_elips {
+                width: 4px;
+                height: 4px;
+                border-radius: 100%;
+                background-color: map-get($colors, dGrey);
+            }
+            p {
+                @include size_color(black, PR3-14, FW_R)
+            }
+        }
+
+    }
+    .product_price {
+        @include size_color(primary_2, EH6-20, FW_H)
+    }
+}
+
+
+.product_info_content .product_sell_info .star {
+    width: 18px;
+    height: 18px;
+    transform: translateY(-1px);
+}
+//? End Product Name sell info
+
+
+//!Query for Ipad
+@media screen and (min-width: 1024px) {
+    .product_info_content {
+        width: 100%;
+
+        .info_footer .product_btns {
+            @include flex_row()
+        }
+    }
+}
+
+//!Query for Desktop 
+@media screen and (min-width: 1500px) {
+    
+
+    .info_header .product_sell_info{
+        .product_title h2{
+            font-size: map-get($fonts,EH2-38);
+            margin-bottom: 8px;
+        }
+        .product_price h3{
+            font-size: map-get($fonts,EH4-28);
+        }
+    }
+
+    .info_header .product_description p{
+        font-size: map-get($fonts,PR2-16);
+        line-height: 160%; /* 25.6px */
+    }
+}

@@ -1,0 +1,28 @@
+@import './map';
+
+@mixin flex($justify: null, $align: null) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin flex_colum ($gap:null) {
+    display: flex;
+    flex-direction: column;
+    gap: $gap;
+}
+
+@mixin flex_row ($gap:null) {
+    display: flex;
+    flex-direction: row;
+    gap: $gap;
+}
+
+
+@mixin size_color ($color: null, $size: null, $weight: null) {
+    color: map-get($colors, $color);
+    font-size: map-get($fonts, $size);
+    font-weight: map-get($fonts, $weight);
+}
+
+

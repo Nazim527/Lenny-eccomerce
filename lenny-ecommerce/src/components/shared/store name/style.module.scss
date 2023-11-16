@@ -1,0 +1,104 @@
+@import '../../../helpers/mixin';
+
+.store_name_cart {
+    @include flex($align: center);
+}
+
+.store_name_cart .image {
+    width: 40px;
+    height: 40px;
+
+    @include flex(center,center)
+}
+
+.store_name_cart .image img {
+    width: 100%;
+    height: 100%;
+    transform: translateY(2px);
+}
+
+.store_name_cart .store_name {
+    @include flex_colum(2px)
+}
+
+.store_name_cart .store_name h1{
+    @include size_color(black,H4-12,FW_H)
+}
+.store_name_cart .store_name p {
+    @include size_color(secondary,PR5-10,FW_R)
+}
+.store_name_cart .store_name .price {
+    @include size_color(primary_2,PR5-10,FW_H)
+}
+
+
+//!Shopping cart Product
+.chart_product_info {
+    gap: 10px;
+
+    .image {
+        width: 60px;
+        height: 60px;
+        background-color: map-get($colors,dGrey);
+        padding: 5px;
+        border-radius: 8px;
+    }
+
+    .store_name {
+        gap: 5px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .store_name_cart .store_name {
+        h1,p {
+            font-size: map-get($fonts , EH_defualt);
+        }
+    }
+
+    .chart_product_info {
+        width: 344px;
+        gap: 17px;
+    
+        .image {
+            width: 80px;
+            height: 80px;
+            img {
+                object-fit: cover;
+            }
+        }
+    
+        .store_name {
+            gap: 10px;
+            h1,p {
+                font-size: map-get($fonts, H3-14 );
+            }
+            .price {
+                font-size: map-get($fonts, PR2-16 );
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .chart_product_info {
+        width: 411px;
+        .image {
+            width: 100px;
+            height: 100px;
+        }
+    
+        .store_name {
+            gap: 18px;
+            h1{
+                font-size: map-get($fonts, EH6-20 );
+            }
+            p {
+                font-size: map-get($fonts, PR2-16);
+            }
+            .price {
+                font-size: map-get($fonts, EH6-20 );
+            }
+        }
+    }
+}

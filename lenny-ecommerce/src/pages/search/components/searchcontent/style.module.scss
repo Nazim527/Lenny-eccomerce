@@ -1,0 +1,320 @@
+@import "../../../../helpers/map";
+@import "../../../../helpers/mixin";
+
+.search_content {
+  margin-bottom: 70px;
+  .left_filter {
+    display: none;
+  }
+
+  .right_product {
+    @include flex_colum(16px);
+    padding: 0 24px;
+    .products {
+      margin-bottom: 32px;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 24px;
+      column-gap: 16px;
+      justify-items: center;
+
+    }
+    .not_found {
+      width:100%;
+      height: 350px;
+      padding: 12px;
+      @include flex_colum(12px);
+      justify-content: center;
+      text-align: center;
+
+      h1 {
+        @include size_color(black, EH5-24, FW_H)
+      }
+      p {
+        @include size_color(secondary, PR2-16, FW_M)
+      }
+    }
+
+    .pages_num {
+      width: 100%;
+
+      @include flex(center);
+      button {
+        width: 0;
+      }
+    }
+  }
+}
+
+.loading {
+  @include flex(center,center);
+  margin: 100px 0;
+}
+
+//! Mobile version Filter
+.overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background: #0B0F0E;
+  border: none;
+  border-radius: 8px;
+  box-shadow: none;
+  z-index: 1111111;
+  outline: none;
+
+  @include flex(center,center);
+}
+.search_content {
+  position: relative;
+  .left_filter_mobile {
+    display: block;
+    overflow-y: scroll;
+    position: fixed;
+    width: 80vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background-color: #FFF;
+    border-radius: 12px;
+    z-index: 11111111;
+
+    .filter {
+      padding: 24px;
+      height: 100vw;
+      @include flex_colum(24px);
+
+      h3 {
+        @include size_color(black, H2-18, FW_H);
+      }
+      .line {
+        width: 100%;
+        height: 1.5px;
+        background-color: map-get($colors, dGrey);
+      }
+    }
+
+    .filter_group {
+      @include flex_colum(24px);
+
+      .close_filter {
+        position: absolute;
+        top: 20px;
+        transform: translateY(-5%);
+        right: 22px;
+        z-index: 111;
+        
+        .closeIcon {
+          @include size_color(sRed,EH5-24,FW_H)
+        }
+
+      }
+    }
+  }
+
+  .filter .filter_group {
+    .acardition_header {
+      @include size_color(black, EH_defualt, FW_H);
+    }
+
+    .boxs_acardition {
+      @include flex_colum(12px);
+
+      a {
+        @include size_color(primary_2, PR3-14, FW_M);
+      }
+    }
+
+    //!Acardition Price section
+    .acardition_price {
+      .boxs_prices {
+        @include flex_colum(12px);
+      }
+
+      .active_price {
+        background-color: map-get($colors,primary_2 );
+      }
+      .price_text {
+        border: 1px solid map-get($colors, secondary);
+        padding: 10px;
+        border-radius: 16px;
+
+        @include flex($align: center);
+
+        select {
+          border: none;
+          outline: none;
+          border-right: 1px solid map-get($colors, secondary);
+        }
+        input {
+          border: none;
+          outline: none;
+          padding: 5px;
+          width: 90%;
+        }
+      }
+
+      button {
+        width: auto;
+        padding: 11px 16px;
+        border-color: map-get($colors, secondary);
+      }
+    }
+  }
+  .filter .filter_group .customTypography {
+    @include flex($align: center);
+    @include size_color(secondary, PR3-14, FW_R);
+
+    input[type="checkbox"] {
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+    span {
+      @include flex($align: center);
+      gap: 4px;
+    }
+  }
+}
+
+//!Query for Ipad
+@media screen and (min-width: 1024px) {
+  .search_content {
+    padding: 0 120px;
+
+    @include flex(space-between);
+    .left_filter {
+      display: block;
+      width: 278px;
+
+      .filter {
+        padding: 24px;
+        @include flex_colum(24px);
+
+        h3 {
+          @include size_color(black, H2-18, FW_H);
+        }
+        .line {
+          width: 100%;
+          height: 1.5px;
+          background-color: map-get($colors, dGrey);
+        }
+      }
+
+      .filter_group {
+        @include flex_colum(24px);
+      }
+    }
+
+    .filter .filter_group {
+      .acardition_header {
+        @include size_color(black, EH_defualt, FW_H);
+      }
+
+      .boxs_acardition {
+        @include flex_colum(12px);
+
+        a {
+          @include size_color(primary_2, PR3-14, FW_M);
+        }
+      }
+
+      //!Acardition Price section
+      .acardition_price {
+        .boxs_prices {
+          @include flex_colum(12px);
+        }
+
+        .active_price {
+          background-color: map-get($colors,primary_2 );
+        }
+        .price_text {
+          border: 1px solid map-get($colors, secondary);
+          padding: 10px;
+          border-radius: 16px;
+
+          @include flex($align: center);
+
+          select {
+            border: none;
+            outline: none;
+            border-right: 1px solid map-get($colors, secondary);
+          }
+          input {
+            border: none;
+            outline: none;
+            padding: 5px;
+            width: 90%;
+          }
+        }
+
+        button {
+          width: auto;
+          padding: 11px 16px;
+          border-color: map-get($colors, secondary);
+        }
+      }
+    }
+
+    .right_product {
+      width: 73%;
+      .products {
+        padding: 0;   
+        display: grid;
+        justify-items: end;
+        grid-template-columns: repeat(3, 1fr);
+        row-gap: 24px;
+        column-gap: 25px;
+
+        .search_product {
+          width: 220px;
+        }
+        
+      }
+
+    }
+  }
+
+  //! Custom font
+  .filter .filter_group .customTypography {
+    @include flex($align: center);
+    @include size_color(secondary, PR3-14, FW_R);
+
+    input[type="checkbox"] {
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+    span {
+      @include flex($align: center);
+      gap: 4px;
+    }
+  }
+}
+
+//! Query for desktop
+@media screen and (min-width: 1500px) {
+  .search_content .left_filter {
+    width: 290px;
+  }
+  .search_content .right_product .products .search_product {
+    width: 293px;
+  }
+}

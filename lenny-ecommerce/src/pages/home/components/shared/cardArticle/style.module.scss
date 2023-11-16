@@ -1,0 +1,74 @@
+@import '../../../../../helpers/mixin';
+@import '../../../../../helpers/map';
+
+.cart_article {
+
+    
+    @include flex_colum(16px);
+    .article_header {
+        width: 100%;
+    }
+    .article_footer {
+        @include flex_colum(8px);
+
+        p:first-child {
+            color: map-get($colors, primary );
+            font-size: map-get($fonts,PR3-14);
+        }
+
+        div h1 {
+            font-size: map-get($fonts,EH_defualt);
+            margin-bottom: 4px;
+        }
+        div p {
+            line-height: 160%;
+            font-size: map-get($fonts,PR3-14);
+        }
+    }
+}
+
+//! Query for Ipad 
+@media screen and (min-width: 1024px) {
+    .cart_article {
+    
+        @include flex_colum(12px);
+        .article_header {
+            width: 100%;
+            height: 100%;
+        }
+
+        .article_footer {
+            gap: 12px;
+        }
+    }
+    
+}
+
+//! Query for Destop 
+@media screen and (min-width: 1500px) {
+    .cart_article {
+        width: 384px;
+    
+        @include flex_colum(12px);
+        .article_header {
+            width: 100%;
+            height: 100%;
+        }
+        .article_footer {
+            
+            p:first-child {
+                color: map-get($colors, primary );
+                font-size: map-get($fonts,PR2-16);
+            }
+    
+            div h1 {
+                font-size: map-get($fonts,EH6-20);
+                margin-bottom: 4px;
+            }
+            div p {
+                font-size: map-get($fonts,EH_defualt);
+            }
+        }
+    }
+    
+}

@@ -1,0 +1,120 @@
+@import "../../../../helpers/map";
+@import "../../../../helpers/mixin";
+
+.user_popup {
+  padding: 24px;
+  background-color: map-get($colors, lGrey);
+  width: 410px;
+
+  position: fixed;
+  top: 70px;
+  right: 120px;
+  z-index: 1111111;
+
+  @include flex_colum(24px);
+
+  .user_info {
+    padding-bottom: 30px;
+    border-bottom: 2px solid map-get($colors, secondary_2);
+
+    @include flex_row(16px);
+    align-items: center;
+
+    .user_avatar {
+      width: 90px;
+      height:  90px;
+
+      img {
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+    .user_infoText {
+      h1 {
+        font-size: map-get($fonts, EH6-20);
+      }
+      p {
+        font-size: map-get($fonts, PR2-16);
+      }
+    }
+
+    .user_content {
+      @include flex_colum(15px)
+    }
+  }
+
+  .user_contentDefault {
+    padding-bottom: 24px;
+    border-bottom: 2px solid map-get($colors, secondary_2);
+
+    @include flex_colum(15px);
+    h5 {
+      @include size_color(secondary, PR3-14, FW_M);
+    }
+
+    .user_subContent {
+      @include flex_colum(8px);
+    }
+  }
+
+  .user_signOut {
+    @include flex_row(10px);
+    align-items: center;
+
+    cursor: pointer;
+    .icon {
+      @include flex(center, center);
+    }
+    p {
+      @include size_color(sRed, PR2-16, FW_M);
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .user_popup {
+    padding: 24px;
+    background-color: map-get($colors, lGrey);
+    width: 290px;
+
+    position: fixed;
+    top: 70px;
+    right: 24px;
+    z-index: 1111111;
+
+    @include flex_colum(12px);
+    .user_info {
+      padding-bottom: 18px;
+
+      @include flex_row(16px);
+      align-items: center;
+      
+      .user_avatar {
+        width: 80px;
+        height:  70px;
+      }
+    }
+
+    .user_contentDefault {
+      padding-bottom: 18px;
+
+      @include flex_colum(14px);
+      .user_subContent {
+        @include flex_colum(6px);
+      }
+    }
+
+    .user_signOut {
+      @include flex_row(10px);
+      align-items: center;
+
+      cursor: pointer;
+      .icon {
+        @include flex(center, center);
+      }
+      p {
+        @include size_color(sRed, PR2-16, FW_M);
+      }
+    }
+  }
+}

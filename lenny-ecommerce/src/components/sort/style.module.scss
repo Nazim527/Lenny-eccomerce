@@ -1,0 +1,160 @@
+@import '../../helpers/map';
+@import '../../helpers/mixin';
+
+.sort_section {
+    padding: 0 24px;
+    margin-bottom: 32px;
+
+    @include flex_colum(24px);
+
+    .left {
+        h1 {
+            @include size_color(black,H2-18,FW_H);
+        }
+        p {
+            font-size: map-get($fonts,H4-12);
+        }
+    }
+
+    .right {
+        @include flex(space-between,center);
+
+        .sort_product {
+            @include flex();
+        }
+
+        .product_layout {
+            @include flex($align:center);  
+            gap: 10px;
+        }
+    }
+}
+
+.right  {
+    .sort_product {
+        @include flex(space-between,center);
+        gap: 5px;
+        
+        p {
+            @include size_color(secondary,PR3-14,FW_R);
+            white-space: nowrap;
+        }
+
+        select {
+            outline: none;
+            border-radius: 8px;
+            padding: 8px 3px 8px 5px;
+            border: 1px solid map-get($colors,dGrey);
+            font-size: map-get($fonts,PR3-14);
+        }
+    }
+
+    .product_layout {
+        .icon {
+            border: 1px solid map-get($colors, dGrey);
+            border-radius: 8px;
+            width: 32px;
+            height: 32px;
+    
+            @include flex(center,center);
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    
+        .line {
+            background-color: map-get($colors, dGrey);
+            width: 1px;
+            height: 24px;
+        }
+    
+        button {
+            width: 32px;
+            height: 32px;
+            span {
+                width: 20px;
+                height: 20px;
+            }
+        }
+
+    }
+}
+
+//! Query for Ipad 
+@media screen and (min-width: 1024px) {
+    .sort_section {
+        padding: 0 120px;
+
+        @include flex_row();
+        @include flex(space-between,center);
+
+        .left {
+            h1 {
+                font-size: map-get($fonts,EH6-20 );
+            }
+            p {
+                font-size: map-get($fonts,PR3-14);
+            }
+        }    
+    }
+
+    .sort_section .right {
+
+        @include flex_row(24px);
+        .product_layout {
+            button,.icon {
+                cursor: pointer;
+            }
+
+            & .icon:nth-child(1) {
+                display: none;
+            }
+
+            .line {
+                margin-right: 14px;
+            }
+        }
+    }
+}
+
+//! Query for Desktop
+@media screen and (min-width:1500px) {
+    .sort_section {
+        .left {
+            h1 {
+                font-size: map-get($fonts,EH5-24 );
+            }
+            p {
+                font-size: map-get($fonts,PR2-16);
+            }
+        }   
+    }
+
+    .sort_section .right {
+
+        @include flex_row(24px);
+        .sort_product select{
+            p {
+                font-size: map-get($fonts,PR2-16);
+            }
+            padding: 11px 10px;
+        }
+
+        .product_layout {
+            button,.icon {
+                cursor: pointer;
+                width: 44px;
+                height: 42px;
+            }
+
+            & .icon:nth-child(1) {
+                display: none;
+            }
+
+            .line {
+                margin-right: 14px;
+            }
+        }
+    }
+}

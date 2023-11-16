@@ -1,0 +1,47 @@
+@import '../../../../helpers/map';
+@import '../../../../helpers/mixin';
+
+.product_info {
+    padding: 0 24px;
+    margin-bottom: 52px;
+
+    @include flex_colum(24px);
+}
+
+
+//! Swiper images slider 
+#swippper  > div {
+    @include flex($align: center)
+}
+
+
+.loading {
+    @include flex(center,center);
+    margin: 100px 0;
+}
+//! Query for Ipad 
+@media screen and (min-width: 1024px) {
+    .product_info {
+        padding: 0 120px;
+
+        @include flex(space-between, center);
+        @include flex_row();
+        .left_image {
+            width: 430px;
+        }
+        .right_info {
+            width: 560px;
+        }
+    }
+}
+//! Query for Desktop 
+@media screen and (min-width: 1500px) {
+    .product_info {
+        .left_image {
+            width: 580px;
+        }
+        .right_info {
+            width: 640px;
+        }
+    }
+}

@@ -1,0 +1,186 @@
+@import "../../../helpers/map";
+@import "../../../helpers/mixin";
+.signUp_container {
+  border: 1px solid map-get($colors, dGrey);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 9px;
+  background-color: white;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+  padding: 23px;
+  z-index: 1111111111111111;
+
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  .signUp_title {
+    h2 {
+      @include size_color(black, EH5-24, FW_H);
+    }
+  }
+  .signUpInput {
+    @include flex_colum(20px);
+    form {
+      @include flex_colum(16px);
+
+      .regUser_input {
+        position: relative;
+        @include flex_colum(5px);
+
+        .regError {
+          @include size_color(sRed, PR4-12, FW_M);
+        }
+      }
+      .toggle_password {
+        position: absolute;
+        top: 46px;
+        right: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+
+        .passIcon {
+          width: 23px;
+          height: 23px;
+        }
+      }
+      label {
+        @include size_color(black, EH_defualt, FW_H);
+      }
+      input {
+        position: relative;
+        font-size: 14px;
+        width: 390px;
+        height: 46px;
+        border: none;
+        background-color: map-get($colors, dGrey_3);
+        border-radius: 8px;
+        padding: 10px 16px 10px 16px;
+        outline: none;
+      }
+      .signUpbtn {
+        button {
+          cursor: pointer;
+          width: 390px;
+          height: 48px;
+          border: 1px solid map-get($colors, dGrey);
+          background-color: map-get($colors, primary);
+          border-radius: 8px;
+          @include size_color(lGrey, PR1-18, FW_M);
+        }
+      }
+    }
+    span {
+      @include size_color(primary, PR3-14, FW_M);
+      text-align: end;
+      margin-right: 15px;
+    }
+  }
+  .signUpButtons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .methods {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .leftBorder {
+        width: 100px;
+        border-top: 2px solid map-get($colors, dGrey);
+      }
+      span {
+        @include size_color(secondary, PR2-16, FW_M);
+      }
+      .rightBorder {
+        width: 100px;
+        border-top: 2px solid map-get($colors, dGrey);
+      }
+    }
+    .signfacebookbtn {
+      .facebookIcon {
+        text-align: center;
+        width: 20px;
+        height: 20px;
+        color: #337fff;
+      }
+      button {
+        cursor: pointer;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        width: 390px;
+        height: 48px;
+        border: 1px solid #000;
+        background-color: transparent;
+        border-radius: 8px;
+        color: #337fff;
+        font-size: 18px;
+        font-weight: 600;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 450px) {
+  .signUp_container {
+    width: 350px;
+    gap: 30px;
+    padding: 20px;
+    .signUp_title {
+      h2 {
+        font-size: 20px;
+      }
+    }
+    .signUpInput {
+      gap: 18px;
+      form {
+        gap: 13px;
+        input {
+          width: 100%;
+        }
+        .signUpbtn {
+          button {
+            width: 100%;
+            font-size: 16px;
+          }
+        }
+        .toggle_password {
+          right: 0px;
+        }
+      }
+      span {
+        font-size: 14px;
+        margin-left: 63%;
+      }
+    }
+    .signUpButtons {
+      gap: 20px;
+
+      .methods {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .leftBorder {
+          width: 80px;
+        }
+        span {
+          font-size: 12px;
+        }
+        .rightBorder {
+          width: 80px;
+        }
+      }
+      .signfacebookbtn {
+        .facebookIcon {
+          margin-bottom: 3px;
+        }
+        button {
+          width: 290px;
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,246 @@
+@import "../../helpers/map";
+@import "../../helpers/mixin";
+
+header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: map-get($colors,lGrey_2);
+  padding: 13px 24px;
+  z-index: 111111;
+  transition: top .3s;
+
+  @include flex(space-between,center);
+  gap: 16px;
+
+}
+
+.visible {
+  top: -65px;
+}
+.overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  background: #0B0F0E;
+  border: none;
+  border-radius: 8px;
+  box-shadow: none;
+  z-index: 1111111;
+  outline: none;
+
+  @include flex(center,center);
+}
+
+//!Left
+header .left .logo_desktop {
+    display: none;
+}
+
+header .left .logo_mobile {
+    width: auto;
+    height: 24px;
+}
+header .right .hamburger_menu {
+  width: 24px;
+  height: 24px;
+  margin-right: 5px;
+  cursor: pointer;
+  box-sizing: border-box !important;
+}
+
+header .right .hamburger_menu img {
+    box-sizing: border-box;
+}
+
+header .center {
+  position: relative;
+
+
+  @include flex_colum();
+  .search_result {
+    position: absolute;
+    padding: 10px 20px;
+    width: 100%;
+    top: 28px;
+    overflow-y: auto;
+    max-height: 145px;
+    z-index: 1111;
+    background-color: map-get($colors,dGrey_3 );
+    border-radius: 9px;
+
+    .notFound_search p {
+      @include size_color(black,PR4-12,FW_M)
+    }
+  }
+}
+//! Form section
+header .center form {
+  display: none;
+  padding: 4px 12px;
+  border-radius: 8px;
+  background-color: map-get($colors, dGrey_3);
+  width: auto;
+
+  select,
+  .line {
+    display: none;
+  }
+
+  input {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+  input {
+    outline: none;
+    border: none;
+    background-color: inherit;
+
+    &.focused_input {
+      width: 200px;
+    }
+  }
+}
+
+
+.line {
+  width: 1px;
+  height: 20px;
+  background-color: map-get($colors, dGrey);
+  margin: 0 10px;
+}
+
+//! Right section
+header .right {
+  @include flex($align: center);
+
+  .profile_account .userAvatar {
+    cursor:pointer;
+    width: 45px;
+    height: 45px;
+    @include flex($align: center);
+    img {
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+}
+
+header .right .account_notifactions,
+header .right .line {
+  display: none;
+}
+
+header .header_icon {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+header .header_icon span {
+  position: absolute;
+  box-sizing: border-box;
+  top: -7px;
+  right: -7px;
+  padding: 2px 4px;
+  border: 2px solid white;
+  border-radius: 100%;
+  background-color: map-get($colors, sRed);
+  @include size_color(lGrey, H5-10, FW_H);
+}
+
+//!Show menu
+.center .show_form {
+    @include flex()
+}
+
+header .right .show_notifications {
+    @include flex_row(16px);
+    align-items: center;
+}
+
+header .right .show_line {
+    display: block;
+}
+
+
+//! Query for desktop and ipad
+@media screen and (min-width: 1024px) {
+    header {
+      padding: 13px
+       120px;
+    }
+
+    header .right .hamburger_menu,
+    header .left .logo_mobile {
+        display: none;
+    }
+
+    //!Left
+    header .left .logo_desktop {
+        display: block;
+    }
+
+    //!Center
+
+    header .center .search_result{
+      top: 46px;
+      max-height: 230px;
+
+      .notFound_search p {
+        font-size: map-get($fonts, PR1-18);
+      }
+    }
+    header .center form {
+        width: 560px;
+        @include flex($align: center);
+
+        select {
+            display: block;
+        }
+
+        input {
+            box-sizing: border-box;
+            padding: 11px 16px;
+        }
+    }
+
+    header .right {
+        @include flex($align: center);
+
+        .account_notifactions {
+            @include flex_row(24px);
+            align-items: center;
+        }
+        .line {
+            display: block;
+        }
+        .profile_account {
+            display: block;
+            position: relative;
+
+            .userAvatar {
+              cursor:pointer;
+              width: 45px;
+              height: 45px;
+            }
+        }
+    }
+
+    header .header_icon {
+        width: 28px;
+        height: 28px;
+
+        span {
+            top: -9px;
+            right: -9px;
+            padding: 5px 7px;
+            @include size_color(null,H5-10,null)
+        }
+    }
+}

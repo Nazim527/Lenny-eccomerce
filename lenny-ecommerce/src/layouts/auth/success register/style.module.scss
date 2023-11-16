@@ -1,0 +1,84 @@
+@import "../../../helpers/map";
+@import "../../../helpers/mixin";
+
+.success_register {
+  border: 1px solid map-get($colors, dGrey);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 9px;
+  background-color: white;
+  width: 470px;
+  height: fit-content;
+  padding: 23px;
+  z-index: 1111111111111111;
+
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  @include flex_colum(32px);
+  align-items: center;
+  justify-content: space-between;
+  .success_header {
+    @include flex_colum(24px);
+    align-items: center;
+
+    .images {
+      width: 140px;
+      height: 140px;
+    }
+    .succes_content {
+      @include flex_colum(12px);
+      align-items: center;
+      h1 {
+        font-size: map-get($fonts, EH5-24);
+      }
+      p {
+        text-align: center;
+        font-size: map-get($fonts, PR2-16);
+      }
+    }
+  }
+
+  .success_footer {
+    width: 100%;
+    button {
+      width: 100%;
+    }
+
+    .btns {
+      @include flex_colum(12px);
+    }
+  }
+}
+
+//!error message UI
+.error_register {
+  @include flex(center, center);
+}
+
+@media screen and (max-width: 1024px) {
+  .success_register {
+    width: 350px;
+    @include flex_colum(24px);
+
+    .success_header {
+      @include flex_colum(24px);
+      align-items: center;
+
+      .images {
+        width: 100px;
+        height: 100px;
+      }
+      .succes_content {
+        @include flex_colum(8px);
+        h1 {
+          font-size: map-get($fonts, PR1-18);
+        }
+        p {
+          font-size: map-get($fonts, PR3-14);
+        }
+      }
+    }
+  }
+}

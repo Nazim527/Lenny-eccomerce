@@ -1,0 +1,10 @@
+@import '../../../helpers/mixin';
+
+.box_titles h1{
+    @include size_color(black, EH3-32, FW_H);
+}
+
+.box_titles p {
+    @include size_color(secondary, H2-18, FW_R);
+    line-height: 140%;
+}

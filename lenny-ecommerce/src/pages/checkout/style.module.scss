@@ -1,0 +1,34 @@
+@import '../../helpers/map';
+@import '../../helpers/mixin';
+
+.checkout_section {
+    padding: 0 24px;
+
+    .checkout_section_content {
+        @include flex_colum(32px);
+
+        .checkout_content_left {
+            @include flex_colum(24px)
+        }
+    }
+}
+
+//!Query for Ipad
+@media screen and (min-width: 1024px) {
+    .checkout_section {
+        padding: 0 120px;
+
+        .checkout_section_content {
+            @include flex(space-between);
+            flex-direction: row;
+
+            .checkout_content_left {
+                width: 70%;
+            }
+
+            .checkout_content_right {
+                width: 30%;
+            }
+        }
+    }
+}

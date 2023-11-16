@@ -1,0 +1,93 @@
+@import '../../../../helpers/map';
+@import '../../../../helpers/mixin';
+
+.shipping_address {
+    padding: 16px;
+
+    @include flex_colum(24px);
+    .address_title h1{
+        @include size_color(black,EH_defualt,FW_H)
+    }
+
+    .address_content {
+        @include flex_colum(20px);
+
+        .address_left {
+            @include flex_row(16px);
+
+            p {
+                @include size_color(secondary,PR4-12,FW_R)
+            }
+        }
+
+        .address_right button{
+            width: 100%;
+            border-color: map-get($colors,dGrey);
+            p {
+                @include size_color(black,PR3-14,FW_H)
+            }
+        }
+    }
+}
+
+.address_content .address_left .address_info{
+
+    @include flex_colum(8px);
+    
+    .info_title {
+
+        @include flex_row(12px);
+        align-items: center;
+        h1 {
+            @include size_color(black,PR3-14,FW_H)
+        }
+        .confirm_address span{     
+            padding:5px 8px;
+            border-radius: 4px;
+            background: rgba(29, 158, 52, 0.10);
+            @include size_color(primary_2,PR4-12,FW_M)
+            
+        }
+    }
+}
+
+//! Query for Ipad
+@media screen and (min-width: 1024px) {
+    .shipping_address {
+        padding: 32px 24px;    
+    
+        .address_content {
+            @include flex(space-between,center);
+            flex-direction: row;
+    
+            .address_left p{
+                @include size_color(secondary,PR4-12,FW_R)
+            }
+            .address_right button{
+                padding: 14px 16px;
+            }
+        }
+    }
+}
+
+//! Query for Desktop 
+@media screen and (min-width: 1500px) {
+    .shipping_address {
+
+        .address_title h1 {
+            font-size: map-get($fonts,EH6-20);
+        }
+
+        .address_content .address_left .address_info {
+            p {
+                font-size: map-get($fonts,PR2-16);
+            }
+
+            .info_title {
+                h1 {
+                    font-size: map-get($fonts,EH6-20);
+                }
+            }
+        }
+    }
+}

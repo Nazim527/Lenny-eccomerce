@@ -1,0 +1,269 @@
+@import '../../helpers/mixin';
+@import '../../helpers/map';
+
+
+.product_box {
+    width: 155px;
+    background-color: #fff;
+    border-radius: 8px;
+    
+    
+    @include flex_colum(7px);
+    
+    //! Header
+    .box_header {
+        height: 130px;
+        position: relative;
+        background-color: map-get($colors, lGrey_1 );
+        border-radius: 8px;
+
+        @include flex(center, center);
+
+        .image {
+            width: 100px;
+            height: 100px;
+        }
+        .icon {
+            position: absolute;
+            top: 10px;
+            right: 8px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+
+    //! Footer
+    .box_footer {
+        width: 100%;
+        height: 120px;
+        padding: 8px;
+        @include flex_colum(8px);
+        justify-content: space-between;
+
+
+        .footer_top {
+            @include flex(space-between, start);
+
+            h3 {
+                @include size_color(primary_2, H3-14, FW_H)
+            }
+            
+            h1 {
+                width: 115px;
+                @include size_color(black, H3-14,FW_H);
+                margin-bottom: 4px;
+            }
+            p {
+                font-size: map-get($fonts, PR4-12);
+            }
+        }
+
+        .footer_bottom {
+            @include flex($align: center);
+            @include flex_row(8px);
+
+            .star {
+                width: 18px;
+                height: 18px;
+            }
+            .diff_elips {
+                width: 4px;
+                height: 4px;
+                border-radius: 100%;
+                background-color: map-get($colors, dGrey);
+            }
+            p {
+                @include size_color(black, PR4-12, FW_R)
+            }
+        }
+    }
+}
+
+//! Main product
+.simple_product {
+    height: 200px;
+}
+
+//! Query for Ipad
+@media screen and (min-width: 1024px) {
+    .product_box {
+        width: 200px;
+        @include flex_colum(16px);
+
+        .box_header {
+            height: 191px;
+
+            .icon {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        .box_footer {
+
+            .footer_top {
+                h3 {
+                    font-size: map-get($fonts,H3-14);
+                }
+                h1 {
+                    width: 128px;
+                    font-size: map-get($fonts,H3-14);
+                }
+                p {
+                    font-size: map-get($fonts,H4-12 );
+                }
+            }
+            .footer_bottom {
+                .star {
+                    width: 24px;
+                    height: 24px;
+                }
+                p {
+                    font-size: map-get($fonts,PR3-14 );
+                }
+            }
+        }
+    }
+
+    //!Main Product 
+    .simple_product {
+        width: 155px;
+        gap: 3px;
+
+        .box_header {
+            height: 130px;
+
+            .image {
+                width: 100px;
+                height: 100px;
+            }
+            .icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .box_footer {
+            height: 80px;
+            .footer_top {
+                h3 {
+                    @include size_color(primary_2, H3-14, FW_H)
+                }
+                
+                h1 {
+                    @include size_color(black, H3-14,FW_H);
+                }
+                p {
+                    font-size: map-get($fonts, PR4-12);
+                }
+            }
+    
+            .footer_bottom {
+                .star {
+                    width: 18px;
+                    height: 18px;
+                }
+                .diff_elips {
+                    background-color: map-get($colors, dGrey);
+                }
+                p {
+                    @include size_color(black, PR4-12, FW_R)
+                }
+            }
+        }
+        
+    }
+} 
+
+//! Query for desktop 
+@media screen and (min-width: 1500px) {
+    .product_box {
+        width: 280px;
+
+        .box_header {
+            height: 280px;
+
+            .image {
+                width: 180px;
+                height: 180px;
+            }
+            .icon {
+                width: 36px;
+                height: 36px;
+            }
+        }
+
+        .box_footer {
+
+            .footer_top {
+                h3,h1 {
+                    font-size: map-get($fonts,EH6-20 );
+                }
+                h1 {
+                    width: 200px;
+                }
+                p {
+                    font-size: map-get($fonts,H3-14 );
+                }
+            }
+            .footer_bottom {
+                .star {
+                    width: 24px;
+                    height: 24px;
+                }
+                p {
+                    font-size: map-get($fonts,PR2-16 );
+                }
+            }
+        }
+    }
+
+
+     //!Main Product 
+     .simple_product {
+        width: 155px;
+        gap: 3px;
+
+        .box_header {
+            height: 130px;
+
+            .image {
+                width: 100px;
+                height: 100px;
+            }
+            .icon {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        .box_footer {
+            .footer_top {
+                h3 {
+                    @include size_color(primary_2, H3-14, FW_H)
+                }
+                
+                h1 {
+                    @include size_color(black, H3-14,FW_H);
+                }
+                p {
+                    font-size: map-get($fonts, PR4-12);
+                }
+            }
+    
+            .footer_bottom {
+                .star {
+                    width: 18px;
+                    height: 18px;
+                }
+                .diff_elips {
+                    background-color: map-get($colors, dGrey);
+                }
+                p {
+                    @include size_color(black, PR4-12, FW_R)
+                }
+            }
+        }
+        
+    }
+}

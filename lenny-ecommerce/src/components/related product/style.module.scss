@@ -1,0 +1,28 @@
+@import '../../helpers/map';
+@import '../../helpers/mixin';
+
+.related_products {
+    padding: 32px 0;
+    
+    @include flex_colum(35px);
+
+    .related_footer {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 24px;
+        justify-items: center;
+    }
+}
+
+//! Query for ipad and desktop
+@media screen and (min-width: 1024px) {
+
+    .related_products {
+        .related_header h1{
+            font-size: map-get($fonts,  EH6-20 );
+        }
+        .related_footer {
+            grid-template-columns: repeat(4,1fr);
+        }
+    }
+}

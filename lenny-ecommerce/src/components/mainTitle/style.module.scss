@@ -1,0 +1,54 @@
+@import '../../helpers/mixin';
+@import '../../helpers/map';
+
+.main_header {
+    width: 100%;
+
+    @include flex(space-between, center);
+    h1 {
+        @include size_color(black, H2-18, FW_H);
+    }
+    button {
+        width: auto;
+        padding: 6px 12px;
+
+        p {
+            font-size: map-get($fonts,H3-14);
+        }
+    }
+}
+
+
+//! Query for Ipad 
+@media screen and (min-width: 1024px) {
+    .main_header {
+    
+        h1 {
+            @include size_color(black, EH4-28, FW_H);
+        }
+        button {
+            padding: 10px 16px;
+    
+            p {
+                font-size: map-get($fonts,EH_defualt);
+            }
+        }
+    }
+}
+
+
+//! Query for Desktop 
+@media screen and (min-width: 1500px) {
+    .main_header {
+        h1 {
+            @include size_color(black, EH2-38, FW_H);
+        }
+        button {
+            padding: 10px 16px;
+    
+            p {
+                font-size: map-get($fonts,H2-18);
+            }
+        }
+    }
+}

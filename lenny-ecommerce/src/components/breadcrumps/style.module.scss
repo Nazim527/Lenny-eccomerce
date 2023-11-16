@@ -1,0 +1,29 @@
+@import '../../helpers/map';
+@import '../../helpers/mixin';
+
+.breadcrumbs {
+    padding: 30px 24px;
+
+    @include flex($align: center);
+    gap: 5px;
+
+    a {
+        @include size_color(primary_2,PR3-14,FW_M);
+        @include flex($align: center);
+    }
+}
+
+//! Query for Ipad and desktop
+@media screen and (min-width: 1024px) {
+    .breadcrumbs {
+        padding: 60px 0 32px 120px;
+
+        a {
+            font-size: map-get($fonts, PR2-16);
+
+            span {
+                font-size: map-get($fonts,PR1-18 );
+            }
+        }
+    }
+}

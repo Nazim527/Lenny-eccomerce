@@ -1,0 +1,55 @@
+*, *:before, *:after{
+    box-sizing: border-box;
+}
+
+html, body, span, object, iframe, figure, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, code, em, img, small, strike, strong, sub, sup, tt, b, u, i, ol, ul, li, fieldset, form, label, caption, tbody, tfoot, thead, tr, th, td, main, canvas, embed, footer, header, nav, section, video{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 16px;
+    font: inherit;
+    vertical-align: baseline;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    text-size-adjust: none;
+    font-family: 'Clash Grotesk', sans-serif;
+}
+
+ul li {
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+footer, header, nav, section, main{
+    display: block;
+}
+
+body{
+    line-height: 1;
+}
+
+ol, ul{
+    list-style: none;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+// .container {
+//     height: 100%;
+//     width: 95vw;
+//     margin: 0 auto;
+//     max-width: 1350px;
+//     position: relative;
+// }

@@ -1,0 +1,53 @@
+@import "../../helpers/map";
+@import "../../helpers/mixin";
+
+.search_result_box {
+  width: 100%;
+  border-bottom: 2px solid map-get($colors, dGrey);
+  padding: 12px 0;
+
+  @include flex_colum(12px);
+
+  @include flex_row(10px);
+  align-items: center;
+  .images {
+    width: 30px;
+    height: 30px;
+  }
+
+  .result_info {
+    h1 {
+      font-size: map-get($fonts, PR3-14);
+      margin-bottom: 5px;
+    }
+    p {
+      @include size_color(primary_2, PR4-12, FW_H);
+    }
+  }
+}
+
+//!Query For Ipad and Desktop
+@media screen and (min-width: 1024px) {
+    .search_result_box {
+        padding: 20px 0;
+      
+        @include flex_colum(12px);
+      
+        @include flex_row(10px);
+        align-items: center;
+        .images {
+          width: 60px;
+          height: 60px;
+        }
+      
+        .result_info {
+          h1 {
+            font-size: map-get($fonts, EH6-20);
+            margin-bottom: 15px;
+          }
+          p {
+            @include size_color(primary_2, PR2-16, FW_H);
+          }
+        }
+      }
+}

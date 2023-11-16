@@ -1,0 +1,75 @@
+@import '../../../../helpers/map';
+@import '../../../../helpers/mixin';
+
+.popular_products {
+    padding: 0 24px;
+    margin-bottom: 100px;
+
+    @include flex_colum(30px);
+    align-items: center;
+
+    .popular_title {
+        text-align: center;
+
+        @include flex_colum(12px);
+
+        h1 {
+            font-size: map-get($fonts,H2-18);
+        }
+        p{
+            font-size: map-get($fonts,PR3-14);
+        }
+    }
+
+    .product_boxes {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        row-gap: 23px;
+        column-gap: 17px;
+        justify-items: center;
+    }
+}
+
+//! loading
+.loading {
+    @include flex(center,center);
+    margin: 100px 0;
+}
+
+
+//! Query for Ipad 
+@media screen and (min-width: 1024px) {
+    .popular_products {
+        padding: 0 120px;
+        gap: 52px;
+
+        .popular_title {
+            h1 {
+                font-size: map-get($fonts,EH4-28);
+            }
+            p {
+                font-size: map-get($fonts,PR2-16);
+            }
+        }
+
+        .product_boxes {
+            grid-template-columns: repeat(4,1fr);
+            row-gap: 32px;
+            column-gap: 24px;
+        }
+    }
+}
+
+//! Query for Desktop
+@media screen and (min-width: 1500px) {
+    .popular_products .popular_title{
+         
+        h1 {
+            font-size: map-get($fonts,EH2-38);
+        }
+        p {
+            font-size: map-get($fonts,PR1-18);
+        }
+    }
+}

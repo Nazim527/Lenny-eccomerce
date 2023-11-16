@@ -1,0 +1,29 @@
+@import '../../../../helpers/map';
+@import '../../../../helpers/mixin';
+
+.articles {
+    width: 100%;
+    padding: 0 24px;
+    margin-bottom: 120px;
+
+    @include flex_colum(32px);
+
+    .article_footer {
+        @include flex_colum(24px)
+    }
+}
+
+//! Query for Ipad 
+@media screen and (min-width: 1024px) {
+    .articles {
+        padding: 0 120px;
+    
+        @include flex_colum(32px);
+    
+        .article_footer {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            justify-items: center;
+        }
+    }
+}

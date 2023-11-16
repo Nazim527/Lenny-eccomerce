@@ -1,0 +1,96 @@
+@import "../../../../helpers/map";
+@import "../../../../helpers/mixin";
+
+.shippingProductsBox {
+  padding: 16px;
+  height: fit-content;
+
+  .shippingProductsBox_header h1 {
+    margin-bottom: 5px;
+  }
+
+  .shippingProductsBox_footer {
+    margin-top: 32px;
+    
+    @include flex_colum (24px);
+    h1 {
+        @include size_color(black,EH_defualt,FW_H);
+    }
+
+    .shippingProductsBox_cargo_box {
+        padding: 12px;
+
+        @include flex(space-between, center);
+        .cargo_store {
+            img {
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+            }
+            h1 {
+                font-size: map-get($fonts,PR4-12);
+            }
+            p {
+                font-size: map-get($fonts,PR5-10);
+            }
+        }
+
+        .cargo_box_right {
+            @include flex_row(8px);
+            @include size_color(black,PR4-12,FW_H)
+        }
+    }
+  }
+}
+
+//!Query for Ipad
+@media screen and (min-width: 1024px) {
+  .shippingProductsBox {
+    padding: 32px 24px;
+    width: 100%;
+
+    .shippingProductsBox_header .product_store_name {
+      @include flex_row(12px);
+      img {
+        width: 46px;
+        height: 46px;
+      }
+      h1 {
+        font-size: map-get($fonts, EH_defualt);
+      }
+      p {
+        font-size: map-get($fonts, PR3-14);
+      }
+    }
+  }
+
+    .shippingProductsBox .shippingProductsBox_footer {
+        h1 {
+            @include size_color(black,EH6-20,FW_H);
+        }
+
+        .shippingProductsBox_cargo_box {
+            padding: 24px;
+            .cargo_store {
+                margin-left: 20px;
+                img {
+                    width: 60px;
+                    height: 60px;
+                    margin-right: 29px;
+                }
+                h1 {
+                    font-size: map-get($fonts,EH6-20);
+                }
+                p {
+                    font-size: map-get($fonts,PR2-16);
+                }
+            }
+
+            .cargo_box_right {
+                @include flex_row(8px);
+                @include size_color(black,PR2-16,FW_H)
+            }
+        }
+    }
+
+}

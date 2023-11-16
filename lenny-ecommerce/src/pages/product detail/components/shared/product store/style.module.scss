@@ -1,0 +1,102 @@
+@import '../../../../../helpers/map';
+@import '../../../../../helpers/mixin';
+
+.product_store {
+    padding: 32px 0;
+    margin-bottom: 32px;
+
+    
+    @include flex_colum(20px);
+    .store_footer {
+        @include flex_colum(20px)
+    }
+    .left_store {
+        @include flex_row(12px);
+        align-items:center;
+
+        .store_info {
+            @include flex_colum(4px);
+        }
+    }
+
+    .right_store {
+        @include flex_row(17px);
+        button {
+            width: 155px;
+        }
+    }
+}
+
+.product_store .left_store .store_info {
+    h1{
+        font-size: map-get($fonts, H3-14);
+    }
+    p{
+        font-size: map-get($fonts, PR4-12);
+    }
+
+    .store_success{
+        @include flex_row(8px);
+
+        span {
+            padding: 8px;
+            border-radius: 4px;
+            background: rgba(29, 158, 52, 0.10);
+            @include size_color(primary_2,PR4-12,FW_M)
+        }
+    }
+}
+
+.product_store .left_store .store_icon {
+    width: 59px;
+    height: 59px;
+}
+
+//! Query for Ipad
+@media screen and (min-width: 1024px) {
+    .product_store .store_title h1 {
+        font-size: map-get($fonts,EH6-20 )
+    }
+
+    .product_store .store_footer{
+        @include flex(space-between,center);
+        flex-direction: row;
+
+        .right_store button {
+            width: auto;
+            padding: 14px 24px;
+        }
+    }
+
+    .product_store .store_footer .left_store .store_info {
+        h1{
+            font-size: map-get($fonts, EH_defualt);
+        }
+        p{
+            font-size: map-get($fonts, PR3-14);
+        }
+    
+        .store_success span{
+            font-size: map-get($fonts, PR3-14);
+        }
+    }
+
+    .product_store .left_store .store_icon {
+        width: 84px;
+        height: 84px;
+    }
+}
+//! Query for Desktop
+@media screen and (min-width: 1500px) {
+
+    .product_store .store_footer .left_store .store_info {
+        gap: 10px;
+        h1{
+            font-size: map-get($fonts, H2-18);
+        }
+        p{
+            font-size: map-get($fonts, PR2-16);
+        }
+    }
+
+}

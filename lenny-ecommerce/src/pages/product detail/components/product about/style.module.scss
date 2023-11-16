@@ -1,0 +1,13 @@
+@import '../../../../helpers/map';
+@import '../../../../helpers/mixin';
+
+.product_about {
+    padding: 0 24px;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .product_about {
+        padding: 0 120px;
+    }
+}

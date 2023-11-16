@@ -1,0 +1,26 @@
+@import '../../../../helpers/mixin';
+@import '../../../../helpers/map';
+
+.swipper_footer {
+    height: 160px;
+}
+
+.featured_category {
+    padding: 80px 24px;
+
+    @include flex_colum(34px);
+    .swipper_footer {
+        width: 100%;
+        @include flex(center)
+    }
+}
+
+//! Query for Desktop and Ipad 
+@media screen and (min-width: 1024px) {
+    .swipper_footer {
+        height: 210px;
+    }
+    .featured_category {
+        padding: 80px 120px;
+    }
+}

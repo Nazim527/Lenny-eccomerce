@@ -1,0 +1,156 @@
+@import '../../../../helpers/map';
+@import '../../../../helpers/mixin';
+
+
+.main {
+    padding: 54px 24px 0 24px;
+    background-color: #F7F7F7;
+
+    @include flex_colum(40px);
+    .main_left .main_description{
+        width: 100%;
+        @include flex_colum(32px);
+
+        .main_title {
+            width: 100%;
+            h1 {
+                font-size: map-get($fonts,EH4-28);
+                margin-bottom: 16px;
+            }
+        }
+
+        //?Buttons
+        .main_btns {
+            width: 100%;
+            @include flex_colum(16px);
+
+            button {
+                width: 100%;
+            }
+            
+        }
+    }
+
+    .main_right {
+        position: relative;
+        .image {
+            width: auto;
+            height: 450px;
+
+            img {
+                object-fit: cover;
+            }
+        }
+
+        .main_product {
+            z-index: 1111;
+            position: absolute;
+            top: 62%;
+            right: 5%;
+            transform: translate(-50%,-50%);
+            
+            @include flex_colum(4px);
+            @include flex(center,center);
+            .simple_product {
+                gap: 8px;
+            }
+        }
+    }
+}
+
+//! Icon width and hight
+.main_right .main_product .line_icon {
+    width: 3px;
+}
+.main_right .main_product .circle_icon
+{
+    width: 42px;
+    height: 42px;
+}
+
+//! Query for Ipad
+@media screen and (min-width: 1023px) {
+    .main {
+        padding: 40px 120px 0 120px;
+    
+        @include flex_row();
+        @include flex(space-between,center);
+        //! Left
+        .main_left .main_description{
+            width: 350px;
+    
+            .main_title {
+                width: 100%;
+                h1 {
+                    font-size: map-get($fonts,H1-34);
+                    margin-bottom: 16px;
+                }
+                p {
+                    font-size: map-get($fonts,PR2-16);
+                }
+            }
+    
+            //?Buttons
+            .main_btns {
+                @include flex_row(16px);
+                a button {
+                    width: 100%;
+                }
+                a button {
+                    width: 200px;
+                }
+            }
+        }
+    
+        //!Right
+        .main_right {
+            .main_product {
+                top:62%;
+                right: 25%;
+            }
+        }
+    }
+}
+
+
+//! Query for Desktop
+@media screen and (min-width: 1500px) {
+    .main {
+
+        //! Left
+        .main_left .main_description{
+            width: 670px;
+    
+            .main_title {
+                width: 100%;
+                h1 {
+                    font-size: map-get($fonts,EH1-58);
+                    margin-bottom: 16px;
+                }
+                p {
+                    font-size: map-get($fonts,PR1-18);
+                }
+            }
+    
+            //?Buttons
+            .main_btns {
+                @include flex_row(16px);
+
+                button {
+                    width: 180px;
+                }
+            }
+        }
+    
+        //!Right
+        .main_right {
+            .main_product {
+                top:60%;
+                right: 20%;
+            }
+        }
+    }
+
+
+    
+}

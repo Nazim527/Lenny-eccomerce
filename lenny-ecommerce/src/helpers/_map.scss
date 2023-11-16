@@ -1,0 +1,67 @@
+$colors: (
+    primary: #1E4C2F,
+    primary_1: #257E34,
+    primary_2: #1D9E34,
+
+    black: #0B0F0E,
+    black_1: #1D2322,   
+    black_2: #313736,
+
+    secondary: #818B9C,
+    secondary_1: #9BA6B9,
+    secondary_2: #BCC5D4,
+
+    lGrey: #F1F1F1,
+    lGrey_1: #F6F6F6,
+    lGrey_2: #F9F9F9,
+
+    dGrey: #E4E9EE,
+    dGrey_1: #F0F3F6,
+    dGrey_2: #F8F9FC,
+    dGrey_3: #F6F8FA,
+
+    sOrange: #FFA439,
+    sOrange_1: #FFD5B8,
+    sOrange_2: #FCECE1,
+    sOrange_3: #FCECE1,
+
+    sRed: #E04124,
+    sRed_1: #EF907F,
+    sRed_2: #F9BCB1,
+);
+
+$fonts: (
+    //! for Desktop
+    EH1-58: 58px,
+    EH2-38: 38px,
+    EH3-32: 32px,
+    EH4-28: 28px,
+    EH5-24: 24px,
+    EH6-20: 20px,
+    EH_defualt: 16px,
+
+    //! for Ipad/Mobile
+    H1-34: 34px,
+    H2-18: 18px,
+    H3-14: 14px,
+    H4-12: 12px,
+    H5-10: 10px,
+
+    //? FW-Header
+    FW_H: 600,
+    FW_M: 500,
+    FW_R: 400,
+    
+    //! Paragraphs
+    PR1-18: 18px,
+    PR2-16: 16px,
+    PR3-14: 14px,
+    PR4-12: 12px,
+    PR5-10: 10px,
+    
+    PW1-18: 18px,
+    PW2-16: 16px,
+    PW3-14: 14px,
+    PW4-12: 12px,
+    PW5-10: 10px,
+)

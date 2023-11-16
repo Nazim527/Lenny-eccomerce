@@ -1,0 +1,66 @@
+@import '../../../../../helpers/mixin';
+@import '../../../../../helpers/map';
+
+.cart_list{
+    width: 120px;
+    padding: 22px 20px;
+
+    @include flex_colum(8px);
+    @include flex(center, center);
+    .cart_icon {
+        width: 32px;
+        height: 32px;
+    }
+    .list_title {
+
+        @include flex_colum(4px);
+        align-items: center;
+        h1 {
+            font-size: map-get($fonts,H3-14);
+            white-space: nowrap;
+        }
+        p {
+            font-size: map-get($fonts,PR4-12);
+        }
+    }
+}
+
+//! Query for Ipad 
+@media screen and (min-width: 1024px) {
+    .cart_list {
+        .cart_icon {
+            width: 42px;
+            height: 42px;
+        }
+        .list_title {
+            h1 {
+                font-size: map-get($fonts,EH_defualt);
+            }
+            &p {
+                font-size: map-get($fonts,PR3-14);
+            }
+        }
+    }
+}
+
+//! Query for desktop 
+@media screen and (min-width: 1500px) {
+    .cart_list {
+        width: 180px;
+        padding: 33px 31px;
+
+        @include flex_colum(21px);
+        .cart_icon {
+            width: 52px;
+            height: 52px;
+        }
+        .list_title {
+            h1 {
+                font-size: map-get($fonts,EH6-20);
+            }
+            &p {
+                font-size: map-get($fonts,PR2-16);
+            }
+        }
+    }
+}

@@ -1,0 +1,90 @@
+@import "../../../../helpers/map";
+@import "../../../../helpers/mixin";
+
+.shopping_sort {
+  margin: 32px 0;
+
+  @include flex_colum(24px);
+  .sort_left .shoppingCart_title {
+    h1 {
+      font-size: map-get($fonts, H2-18);
+      margin-bottom: 4px;
+    }
+    p {
+      font-size: map-get($fonts, PR4-12);
+    }
+  }
+
+  .sort_right {
+    .sort_product {
+      @include flex(space-between, center);
+      gap: 5px;
+
+      p {
+        @include size_color(secondary, PR3-14, FW_R);
+        white-space: nowrap;
+      }
+
+      select {
+        width: 100%;
+        outline: none;
+        border-radius: 8px;
+        padding: 8px 3px 8px 5px;
+        border: 1px solid map-get($colors, dGrey);
+        font-size: map-get($fonts, PR3-14);
+      }
+    }
+  }
+}
+
+//! Query for Ipad
+@media screen and (min-width: 1024px) {
+  .shopping_sort {
+    margin: 60px 0;
+
+    @include flex(space-between, center);
+    flex-direction: row;
+
+    .sort_left .shoppingCart_title {
+      h1 {
+        font-size: map-get($fonts, EH6-20);
+      }
+      p {
+        font-size: map-get($fonts, PR3-14);
+      }
+    }
+
+    .sort_right .sort_product {
+        @include flex_row(8px);
+        justify-content: inherit;
+
+      p {
+        font-size: map-get($fonts,PR3-14);
+      }
+
+      select {
+        width: auto;
+      }
+    }
+  }
+}
+
+//! Query for Desktop
+@media screen and (min-width: 1500px) {
+  .shopping_sort {
+    .sort_left .shoppingCart_title {
+      h1 {
+        font-size: map-get($fonts, EH5-24);
+      }
+      p {
+        font-size: map-get($fonts, PR2-16);
+      }
+    }
+
+    .sort_right .sort_product {
+      p {
+        font-size: map-get($fonts,PR2-16);
+      }
+    }
+  }
+}

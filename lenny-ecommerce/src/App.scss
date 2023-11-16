@@ -1,0 +1,9 @@
+@import '../src/helpers/mixin';
+
+#root {
+  margin: 0 auto;
+}
+
+.catgLists {
+  @include flex_row(16px)
+}

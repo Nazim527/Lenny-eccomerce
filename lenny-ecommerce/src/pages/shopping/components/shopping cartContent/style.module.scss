@@ -1,0 +1,35 @@
+@import '../../../../helpers/map';
+@import '../../../../helpers/mixin';
+
+.shoppingCart_content {
+    margin-bottom: 52px;
+
+    @include flex_colum(32px);
+    .cart_content_right {
+        height: fit-content;
+    }
+}
+
+//!Query for Ipad
+@media screen and (min-width:1024px) {
+    .shoppingCart_content {
+        @include flex(space-between);
+        flex-direction: row;
+
+        .cart_content_left {
+            width: 70%;
+        }
+        .cart_content_right {
+            width: 30%;
+        }
+    }
+}
+
+//!Query for Desktop
+@media screen and (min-width:1500px) {
+    .shoppingCart_content {
+        .cart_content_right {
+            width: 30%;
+        }
+    }
+}

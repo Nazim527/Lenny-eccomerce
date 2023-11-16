@@ -1,0 +1,95 @@
+@import '../../../../../helpers/map';
+@import '../../../../../helpers/mixin';
+
+.detail_product {
+    padding: 32px 0;
+
+    @include flex_colum(32px);
+
+    .detail_header {
+        h1 { 
+            font-size: map-get($fonts,H2-18);
+            margin-bottom: 8px;
+        }
+        p {
+            font-size: map-get($fonts,PR4-12);
+        }
+    }
+
+    .detail_footer {
+        @include flex_colum(32px);
+        h3 {
+            @include size_color(black,EH_defualt,FW_H);
+            margin-bottom: 16px;
+        }
+    }
+}
+
+//! Detail explanation
+.detail_footer {
+    .specifition table{
+        width: 100%;
+
+        tbody {
+            tr:nth-child(odd) {
+                background-color: #f2f2f2;
+            }
+            td {
+                padding: 11px 16px;
+
+                p {
+                    @include size_color(secondary,PR3-14,FW_R)
+                }
+                h6 {
+                    @include size_color(black,PR3-14,FW_M)
+                }
+            }
+        }
+    }
+}
+
+//!In the Box
+.detail_footer .product_in_box .product_box_list{
+    @include flex_colum(13px);
+    li {
+        @include flex_row(10px);
+        align-items: center;
+        div {
+            width: 24px;
+            height: 24px;
+        }
+        p{
+            @include size_color(black,PR3-14,FW_M)
+        }
+    }
+}
+
+//! System 
+.detail_footer .systems{
+    @include flex_colum(8px);
+
+    li {
+        @include size_color(secondary,PR3-14,FW_R)
+    }
+}
+
+//! Query for Ipad
+@media screen and (min-width: 1024px) {
+    .detail_product {
+
+        .detail_header {
+            h1 {
+                font-size: map-get($fonts, EH6-20)
+            }
+            p {
+                font-size: map-get($fonts, PR2-16)
+            }
+        }
+
+        .detail_footer {
+            @include flex(space-between);
+            flex-direction: row;
+        }
+    }
+    
+}

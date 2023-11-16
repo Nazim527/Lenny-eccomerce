@@ -1,0 +1,135 @@
+@import '../../helpers/map';
+@import '../../helpers/mixin';
+
+footer {
+    margin-top: 90px;
+    width: 100%;
+    background-color: #F7F7F7;
+    position: relative;
+    @include flex_colum();
+    
+    //? footer top
+    .footer_top {
+        padding: 40px 24px;
+
+        @include flex_colum(33px);
+
+        .footer_left {
+            @include flex(center, start);
+            @include flex_colum(16px);
+
+            p { 
+                @include size_color(black, PR3-14, FW_R);
+                line-height: 160%;
+            }
+        }
+
+
+        .footer_right {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            column-gap: 28px;
+            row-gap: 40px;
+        }
+
+    }
+
+
+    //? Footer bottom
+    .footer_bottom {
+        padding: 16px 0;
+        width: 100%;
+        background-color: map-get($colors,lGrey );
+
+        @include flex_colum(12px);
+        align-items: center;
+
+        p {
+            @include size_color(black,PR3-14,FW_R);
+        }
+
+        .footer_right_bottom {
+            @include flex_row(24px)
+        }
+    }
+}
+
+.footer_right .box {
+    @include flex_colum(16px);
+
+    h1 {
+        @include size_color(black, EH_defualt, FW_H)
+    }
+
+    ul {
+        @include flex_colum(12px);
+
+        li {
+            cursor: pointer;
+            @include size_color(black, PR3-14, FW_R)
+        }
+
+        .line {
+            width: 100%;
+            height: 1px;
+            background-color: map-get($colors,dGrey );
+        }
+    }
+}
+
+
+.header_icon {
+    position: relative;
+    width: 127px;
+    height: auto;
+}
+
+
+//! Query for Ipad
+@media screen and (min-width: 1024px) {
+    footer {
+        width: 100%;
+        @include flex(space-between);
+
+        .footer_top {
+            padding: 60px 120px;
+
+            @include flex(space-between, start);
+            @include flex_row();
+            
+            
+            .footer_left p {
+                @include size_color(black, PR2-16, FW_R)
+            }
+
+            .footer_right {
+                width: 100%;
+                @include flex_row(32px);
+                justify-content: space-between;
+
+                h1 {
+                    @include size_color(black, EH6-20,FW_H);
+                    white-space: nowrap;
+                }
+                
+                .box:nth-child(4){
+                    width: 274px;
+                }
+            }
+            
+        }
+
+        .footer_bottom {
+            padding: 16px 120px;
+
+
+            @include flex_row();
+            @include flex(space-between);
+
+            p {
+                @include size_color(black,PR2-16,FW_R);
+            }
+        }
+    }
+}

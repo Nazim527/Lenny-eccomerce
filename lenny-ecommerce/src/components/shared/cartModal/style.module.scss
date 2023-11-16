@@ -1,0 +1,7 @@
+@import '../../../helpers/map';
+
+.cart_modal {
+    background-color: inherit;
+    border: 2px solid map-get($colors, dGrey);
+    border-radius: 12px;
+}

@@ -1,0 +1,332 @@
+@import "../../../../../helpers/map";
+@import "../../../../../helpers/mixin";
+
+.product_review {
+  padding: 32px 0;
+  margin-bottom: 32px;
+
+  @include flex_colum(24px);
+  .review_header {
+    padding: 16px;
+
+    @include flex_colum(24px);
+
+    .header_left {
+      width: 196px;
+      height: auto;
+    }
+  }
+
+  .review_footer {
+    .footer_left {
+      display: none;
+    }
+
+    .footer_right {
+      @include flex_colum(32px);
+
+      .review_list_header {
+        @include flex_colum(16px);
+      }
+    }
+  }
+}
+
+//!Reviews List button
+.footer_right .review_list_header {
+  h3 {
+    @include size_color(black, EH_defualt, FW_H);
+  }
+
+  .btns {
+    @include flex(space-between);
+
+    .reviews_btns {
+      width: auto;
+
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+
+      button {
+        width: auto;
+        height: auto;
+        padding: 10px;
+        border: 1px solid map-get($colors, dGrey);
+
+        @include size_color(black, PR4-12, FW_M);
+      }
+      & button:nth-child(1) {
+        border-color: map-get($colors, primary_2);
+        color: map-get($colors, primary_2);
+      }
+    }
+
+    .filter_btn {
+      border: 1px solid map-get($colors, dGrey);
+      border-radius: 8px;
+      width: 32px;
+      height: 32px;
+
+      @include flex(center, center);
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+}
+
+//! Client Rewievs
+.product_review .review_footer .review_list_footer {
+  @include flex_colum(24px);
+
+  .client_review {
+    @include flex_colum(20px);
+
+    .client_review_header {
+      @include flex_colum(12px);
+
+      .stars {
+        width: 20px;
+        height: 20px;
+
+        @include flex_row(4px);
+      }
+
+      h1 {
+        font-size: map-get($fonts, H3-14);
+      }
+      p {
+        font-size: map-get($fonts, PR4-12);
+      }
+    }
+
+    .client_review_footer {
+      @include flex(space-between, center);
+
+      .client_profile {
+        @include flex_row(8px);
+        align-items: center;
+
+        .profile_img {
+          width: 35px;
+          height: 35px;
+        }
+        h4 {
+          @include size_color(black_1, PR4-12, FW_H);
+        }
+      }
+
+      .client_btns {
+        @include flex_row(7px);
+
+        button {
+          width: auto;
+          padding: 10px;
+          border-color: map-get($colors, dGrey);
+          font-size: map-get($fonts, PR4-12);
+
+          span {
+            color: map-get($colors, black);
+            width: 20px;
+            height: 20px;
+          }
+          p {
+            color: map-get($colors, black);
+          }
+        }
+
+        .active button:nth-child(1) {
+          border-color: map-get($colors, primary);
+          span,
+          p {
+            color: map-get($colors, primary);
+          }
+        }
+      }
+    }
+  }
+
+  .line {
+    width: 100%;
+    height: 2px;
+    background-color: map-get($colors, dGrey);
+  }
+
+  .pages_num {
+    @include flex(center);
+    button {
+      width: 0;
+    }
+  }
+}
+
+//!Query for Ipad
+@media screen and (min-width: 1024px) {
+  .product_review {
+    .review_title h1 {
+      font-size: map-get($fonts, EH6-20)
+    }
+
+    .review_header {
+      @include flex(space-between);
+      flex-direction: row;
+
+      .header_left {
+        width: 218px;
+        height: 84px;
+      }
+      .header_right {
+        width: 670px;
+      }
+    }
+
+    .review_footer {
+      @include flex(space-between);
+      flex-direction: row;
+
+      .footer_right {
+        width: 70%;
+      }
+    }
+  }
+
+  //!Review List
+  .product_review .review_footer .footer_right {
+    .review_list_header {
+      h3 {
+        font-size: map-get($fonts, EH6-20);
+      }
+
+      .reviews_btns {
+        @include flex_row(12px);
+      }
+      .filter_btn {
+        display: none;
+      }
+    }
+  }
+
+  //! Filter
+  .product_review .review_footer {
+    .footer_left {
+      display: block;
+      width: 278px;
+
+      .filter {
+        padding: 24px;
+        @include flex_colum(24px);
+
+        h3 {
+          @include size_color(black, H2-18, FW_H);
+        }
+        .line {
+          width: 100%;
+          height: 1.5px;
+          background-color: map-get($colors, dGrey);
+        }
+      }
+
+      .filter_group {
+        @include flex_colum(24px);
+      }
+    }
+
+    .filter .filter_group {
+      .acardition_header {
+        @include size_color(black, EH_defualt, FW_H);
+      }
+
+      .boxs_acardition {
+        @include flex_colum(12px);
+
+        a {
+          @include size_color(primary_2, PR3-14, FW_M);
+        }
+      }
+
+      //!Acardition Price section
+      .acardition_price {
+        .boxs_prices {
+          @include flex_colum(12px);
+        }
+
+        .price_text {
+          border: 1px solid map-get($colors, secondary);
+          padding: 10px;
+          border-radius: 16px;
+
+          @include flex($align: center);
+
+          select {
+            border: none;
+            outline: none;
+            border-right: 1px solid map-get($colors, secondary);
+          }
+          input {
+            border: none;
+            outline: none;
+            padding: 5px;
+            width: 90%;
+          }
+        }
+
+        button {
+          width: auto;
+          padding: 11px 16px;
+          border-color: map-get($colors, secondary);
+        }
+      }
+    }
+  }
+
+  //! Custom font
+  .filter .filter_group .customTypography {
+    @include flex($align: center);
+    @include size_color(secondary, PR3-14, FW_R);
+
+    input[type="checkbox"] {
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+    }
+
+    img {
+      width: 18px;
+      height: 18px;
+    }
+    span {
+      @include flex($align: center);
+      gap: 4px;
+    }
+  }
+}
+
+//! Query for desktop
+@media screen and (min-width: 1500px) {
+  .product_review {
+    .review_header {
+      .header_left {
+        width: 278px;
+        height: 95px;
+      }
+      .header_right {
+        width: 770px;
+      }
+    }
+
+    .review_footer {
+      @include flex(space-between);
+      flex-direction: row;
+
+      .footer_left {
+        width: 25%;
+      }
+      .footer_right {
+        width: 70%;
+      }
+    }
+  }
+}
