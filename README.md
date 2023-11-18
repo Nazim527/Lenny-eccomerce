@@ -34,7 +34,7 @@ This application utilizes the following main dependencies:
 - **Sass:** A CSS preprocessor adding features to CSS, promoting more organized and flexible CSS writing.
 
 ## Contributing
-Contributions to this app are welcome. If you find a bug or have an idea for a new feature, please open an issue on [GitHub](link-to-your-github-repo). If you'd like to contribute code, please fork the repository and submit a pull request.
+##### Contributions to this app are welcome. If you find a bug or have an idea for a new feature, please open an issue on [GitHub](link-to-your-github-repo). If you'd like to contribute code, please fork the repository and submit a pull request.
 ------
 ### Page 1
 ![Ekran görüntüsü 2023-11-18 003526](https://github.com/Nazim527/Lenny-eccomerce/assets/68445690/2247d0a4-073d-4f4a-9525-2876115246f3)
